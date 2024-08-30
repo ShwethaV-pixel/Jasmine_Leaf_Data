@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <nav>
+        <ul class="menu">
+            <li><a href="#">Cods</a></li>
+            <li><a href="#">Download</a></li>
+            <li><a href="proces.html">Procesed Images</a></li>
+            <li><a href="#">Home</a></li>
+        </ul>
+    </nav>
+ 
+    <h1>JASMİNE PLANT LEAF DATATEST</h1>
+
+    <div class="container">
+        <div class="text-container">
+            <div class="text1"><h3>Data Description</h3>To develop the datatest for diseased leaf images, collabration was established with 
+                experts from Krishi Vigyan Kendra, Karnataka, India. Digital cameras were employed to capture a total
+                of 2000 images. These images represent four stages of Alternaria leaf blight spot diseases, with 450 images
+                for stage-1,550 images for stage-2,500 images for stage-3, and 500 images for stage-4</div>
+            <div class="text2"><h3>Citalizon</h3>1- Shwetha,V.,et all."A customer
+                Backbone UNet Framework with DCGAN Augmentation for Efficient Segmentation of Leaf Spot Diseases in Jasmine Plant."
+                Journal of Computer Networks and Communications 2024(2024)<br>2-Shwetha, V., Arnav Bhagwat, and Vijaya Laxmi."LeafSpotNet: A deep learning
+                framework for detecting leaf spot diseases in Jasmine plants."<br> Shwetha,V.,et all."A customer
+                Backbone UNet Framework with DCGAN Augmentation for Efficient Segmentation of Leaf Spot Diseases in Jasmine Plant."
+                Journal of Computer Networks and Communications 2024(2024)</div>
+        
+        </div>
+    </div>
+
+    <div class="container2">
+        <a href="healtyLeaves.html">
+            <img src="images/h_1.jpeg" alt="Health" width="200px" height="150px">
+        </a>
+        
+        <p>Healthy</p>
+        <a href="stage1.html">
+            <img src="images/stage_1_2.jpeg" alt="Health" width="200px" height="150px">
+        </a>
+        <p>stage1</p>
+        <a href="stage2.html">
+            <img src="images/images5.jpg" alt=""width="200px" height="150px">
+        </a>
+      
+        <p>stage2</p>
+        <a href="stage3.html">
+            <img src="images/images5.jpg" alt=""width="200px" height="150px">
+        </a>
+       
+        <p>stage3</p>
+    </div>
+
+    <div class="container3">
+        <a href="stage4.html">
+            <img src="images/images3.jpg" alt=""width="200px" height="150px">
+        </a>
+        <p>stage4</p>
+
+        <!-- İndirme butonu -->
+        <a href="form.html" class="btn">
+            <i class="fa fa-download"></i> Download
+        </a>
+   
+        <!-- PHP dosyasına yönlendirilen form -->
+        <div id="emailForm" style="display: none;">
+            <form id="form" action="download" method="POST">
+                <label for="email">E-posta Adresiniz:</label>
+                <input type="email" id="email" name="email" required>
+                <button type="submit">Gönder</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("downloadBtn").addEventListener("click", function() {
+            document.getElementById("emailForm").style.display = "block";
+        });
+    </script>
+</body>
+</html>

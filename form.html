@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download Multiple Files</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="email">
+  <form id="form" action="#" method="POST" onsubmit="return downloadFiles();">
+      <label  for="email">E-Mail:</label>
+      <input type="email" class="email-form" name="email" required>
+      <button type="submit">Download Files</button>
+  </form>
+</div>
+
+<script>
+  function downloadFiles() {
+      var email = document.querySelector('.email-form').value;
+
+      if (email) {
+          var files = ['HealtyLeaves.html', 'Stage1.html', 'Stage2.html','Stage3.html','Stage4.html' ];
+
+          files.forEach(function(filename, index) {
+              setTimeout(function() {
+                  var url = 'photos/' + filename;
+                  var xhr = new XMLHttpRequest();
+                  xhr.open("GET", url, true);
+                  xhr.responseType = "blob";
+                  xhr.onload = function() {
+                      if (xhr.status === 200) {
+                          var urlCreator = window.URL || window.webkitURL;
+                          var fileUrl = urlCreator.createObjectURL(this.response);
+                          var tag = document.createElement('a');
+                          tag.href = fileUrl;
+                          tag.download = filename;
+                          document.body.appendChild(tag);
+                          tag.click();
+                          document.body.removeChild(tag);
+                      } else {
+                          alert('Failed to download ' + filename);
+                      }
+                  };
+                  xhr.send();
+              }, index * 500); // Her dosya için 500ms gecikme
+          });
+
+          return false; 
+      } else {
+          alert('Please enter a valid email address.');
+          return false;
+      }
+  }
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+        
